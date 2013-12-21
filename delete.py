@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
     print('Current friendlist size: {}'.format(len(fs)))
     if len(fs) > config.cull_to_size:
-        sorted_friends = list(islice(OrderedDict(sorted(fs.items(), key=lambda t: t[1])), len(fs) - 50))
+        sorted_friends = list(islice(OrderedDict(sorted(fs.items(), key=lambda t: t[1])), len(fs) - config.cull_to_size))
 
         print('Note: this script will delete the following friends from your list: {}'.format(sorted_friends))
         raw_input('Press enter to continue or ctrl-c to cancel...')
